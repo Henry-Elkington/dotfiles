@@ -82,7 +82,11 @@ return packer.startup(function(use)
   use { "nvim-telescope/telescope.nvim" }
 
   -- Treesitter
-  use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }
+  -- use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }
+  use {
+      'nvim-treesitter/nvim-treesitter',
+      run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
+  }
 
   -- Git
   use { "lewis6991/gitsigns.nvim" }

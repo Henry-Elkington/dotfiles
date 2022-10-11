@@ -2,4 +2,3 @@
 
 stow -d $PWD/Files -t $HOME -S nvim
 
-
