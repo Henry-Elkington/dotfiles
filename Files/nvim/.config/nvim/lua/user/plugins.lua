@@ -45,7 +45,7 @@ return packer.startup(function(use)
   use { "nvim-lua/plenary.nvim" } -- Useful lua functions used by lots of plugins
   use { "windwp/nvim-autopairs" } -- Autopairs, integrates with both cmp and treesitter
   use { "numToStr/Comment.nvim" }
-  use { "JoosepAlviste/nvim-ts-context-commentstring" }
+  --use { "JoosepAlviste/nvim-ts-context-commentstring" }
   use { "kyazdani42/nvim-web-devicons" }
   use { "kyazdani42/nvim-tree.lua" }
   use { "akinsho/bufferline.nvim" }
@@ -85,12 +85,12 @@ return packer.startup(function(use)
   use { "nvim-telescope/telescope.nvim" }
 
   -- Treesitter
-  -- use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }
-  use {
-      'nvim-treesitter/nvim-treesitter',
-      run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
-  }
-
+  -- use {
+  --   'nvim-treesitter/nvim-treesitter',
+  --   run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
+  -- }
+  use { "nvim-treesitter/nvim-treesitter" }
+  
   -- Git
   use { "lewis6991/gitsigns.nvim" }
 

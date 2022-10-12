@@ -20,5 +20,6 @@ require "user.indentline"
 require "user.alpha"
 require "user.lsp"
 require "user.dap"
-require "user.neovide"
 require "user.which-key"
+
+require "user.neovide"
