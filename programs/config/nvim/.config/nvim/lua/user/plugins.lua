@@ -76,8 +76,10 @@ return packer.startup(function(use)
   use { "rafamadriz/friendly-snippets" } -- a bunch of snippets to use
 
   -- LSP
+  use { "williamboman/mason.nvim" } -- LSP Installer
+  use { "williamboman/mason-lspconfig.nvim" }
   use { "neovim/nvim-lspconfig" } -- enable LSP
-  use { "williamboman/nvim-lsp-installer" } -- simple to use language server installer
+
   use { "jose-elias-alvarez/null-ls.nvim" } -- for formatters and linters
   use { "RRethy/vim-illuminate" }
 
@@ -85,12 +87,8 @@ return packer.startup(function(use)
   use { "nvim-telescope/telescope.nvim" }
 
   -- Treesitter
-  -- use {
-  --   'nvim-treesitter/nvim-treesitter',
-  --   run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
-  -- }
   use { "nvim-treesitter/nvim-treesitter" }
-  
+
   -- Git
   use { "lewis6991/gitsigns.nvim" }
 
