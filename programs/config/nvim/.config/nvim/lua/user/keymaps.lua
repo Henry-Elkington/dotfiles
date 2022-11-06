@@ -36,7 +36,7 @@ keymap("n", "<s-h>", ":bprevious<cr>", opts)
 keymap("n", "<leader>h", "<cmd>nohlsearch<cr>", opts)
 
 -- close buffers
-keymap("n", "<s-q>", "<cmd>bdelete!<cr>", opts)
+keymap("n", "<s-q>", "<cmd>Bdelete<cr>", opts)
 
 -- better paste
 keymap("v", "p", '"_dp', opts)
@@ -51,6 +51,10 @@ keymap("i", "jk", "<esc>", opts)
 -- keymap("v", ">", ">gv", opts)
 keymap("v", "<s-tab>", "<gv", opts)
 keymap("v", "<tab>", ">gv", opts)
+
+-- Comment
+keymap("n", "<leader>/", "<cmd>lua require('Comment.api').toggle_current_linewise()<CR>", opts)
+keymap("x", "<leader>/", "<ESC><CMD>lua require('Comment.api').toggle_linewise_op(vim.fn.visualmode())<CR>", opts)
 
 -- Plugins --
 local status_ok, wk = pcall(require, "which-key")
@@ -67,10 +71,6 @@ if not status_ok then
   -- Git
   keymap("n", "<leader>gg", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", opts)
 
-  -- Comment
-  keymap("n", "<leader>/", "<cmd>lua require('Comment.api').toggle_current_linewise()<CR>", opts)
-  keymap("x", "<leader>/", "<ESC><CMD>lua require('Comment.api').toggle_linewise_op(vim.fn.visualmode())<CR>", opts)
-
   -- DAP
   keymap("n", "<leader>db", "<cmd>lua require'dap'.toggle_breakpoint()<cr>", opts)
   keymap("n", "<leader>dc", "<cmd>lua require'dap'.continue()<cr>", opts)
@@ -86,7 +86,7 @@ else
     ["<leader>"] = {
       b = { "<cmd>WhichKey<cr>", "Key Bindings"},
       e = { "<cmd>NvimTreeToggle<cr>", "File Tree" },
-      l = { "<cmd>Lspinstallinfo<cr>", "Install Lsp" },
+      l = { "<cmd>LspInstall<cr>", "Install Lsp" },
       f = {
         name = "Telescope",
         f = { "<cmd>Telescope find_files<cr>", "Find File" },

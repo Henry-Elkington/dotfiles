@@ -8,8 +8,8 @@ local actions = require "telescope.actions"
 telescope.setup {
   defaults = {
 
-    prompt_prefix = " ",
-    selection_caret = " ",
+    prompt_prefix = "  ",
+    selection_caret = "  ",
     path_display = { "smart" },
     file_ignore_patterns = { ".git/", "node_modules" },
 
@@ -21,5 +21,10 @@ telescope.setup {
         ["<C-k>"] = actions.move_selection_previous,
       },
     },
+  },
+  pickers = {
+    find_files = {
+      theme = "dropdown",
+    }
   },
 }
