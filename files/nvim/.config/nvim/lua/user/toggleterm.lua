@@ -12,9 +12,14 @@ toggleterm.setup({
 	start_in_insert = true,
 	insert_mappings = true,
 	persist_size = true,
-	direction = "horizontal",
+	direction = "float",
 	close_on_exit = true,
 	shell = vim.o.shell,
+  auto_scroll = true,
+  float_opts = {
+    border = 'single',
+    winblend = 20,
+  },
   winbar = {
     enabled = false,
     name_formatter = function()
